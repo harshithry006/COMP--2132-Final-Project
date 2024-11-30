@@ -1,0 +1,110 @@
+<!-- @author: Harshith Reddy Ganta -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project</title>
+    <title>Dice Game</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/jquery-3.7.1.min.js" defer></script>
+    <script src="../js/script.js" defer></script>
+</head>
+<body>    
+    <div id="name-popup" class="modal">
+        <div class="modal-content">
+            <h2>Enter Player Name</h2>
+            <input type="text" id="player-name-input" maxlength="15" placeholder="Enter your name">
+            <button id="submit-name">Submit</button>
+        </div>
+    </div>
+    
+    <div id="rules-popup" class="modal">
+        <div class="model-content">
+            <h2>Game Rules</h2>
+            <ul>
+                <li>Each player rolls two dice for three rounds.</li>
+                <li>Score is 0 if any die shows 1.</li>
+                <li>If both dice are the same, the score is twice their sum.</li>
+                <li>Otherwise, the score is the sum of the dice.</li>
+                <li>After three rounds, the highest total score wins.</li>
+            </ul>
+            <button id="start-game">Start Game</button>
+        </div>
+    </div>
+
+    <header>
+        <h1>Dice Game</h1>
+    </header>
+    
+    
+    <main>
+        <section id="game-section">
+            <div class="scoreboard">
+                <div id="player-stats" class="player-box">    
+                    <h2 id="player-name-display">Player</h2>
+                    <p>Current Roll: <span id="player-roll">-</span></p>
+                    <p>Round Score: <span id="player-round-score">0</span></p>
+                    <p>Total Score: <span id="player-total-score">0</span></p>
+                    <div class="dice-display">
+                        <img id="player-dice1" src="../images/dice-1.png" alt="Player Dice 1">
+                        <img id="player-dice2" src="../images/dice-1.png" alt="Player Dice 2">
+                    </div>
+                    <section id="player-round-results">
+                        <h3>Round Results</h3>
+                        <ul id="player-history">
+                        </ul>
+                    </section>
+                </div>
+
+
+                <div id="computer-stats" class="computer-box">
+                    <h2>Computer</h2>
+                    <p>Current Roll: <span id="computer-roll">-</span></p>
+                    <p>Round Score: <span id="computer-round-score">0</span></p>
+                    <p>Total Score: <span id="computer-total-score">0</span></p>
+                    <div class="dice-display">
+                        <img id="computer-dice1" src="../images/dice-1.png" alt="Computer Dice 1">
+                        <img id="computer-dice2" src="../images/dice-1.png" alt="Computer Dice 2">
+                    </div>
+                    <section id="computer-round-results">
+                        <h3>Round Results</h3>
+                        <ul id="computer-history">
+                        </ul>
+                    </section>
+                </div>
+            </div>
+
+            <div id="controls">
+                <button id="roll-button">Roll Dice</button>
+                <button id="stop-button" disabled>Stop Dice</button>
+                <button id="reset-button" disabled>Reset Game</button>
+            </div>
+
+            <div id="popup" class="popup">
+                <div class="popup-content">
+                    <h2>Game Over</h2>
+                    <p id="popup-message"></p>
+                    <button id="play-again">Play Again</button>
+                    <div>
+                        <div id="player-wins">
+                            <img src="../images/player-wins2.png" alt="Player Wins">
+                        </div>
+                        <div id="computer-wins">
+                            <img src="../images/computer-wins.png" alt="Computer Wins">
+                        </div>
+                        <div id="draw">
+                            <img src="../images/tie.png" alt="It's a Tie">
+                        </div>                        
+                    </div>
+                    
+                </div>
+            </div>
+        
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Dice Game | All rights reserved.</p>
+    </footer>
+</body>
+</html>
